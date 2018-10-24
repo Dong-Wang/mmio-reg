@@ -1,0 +1,18 @@
+This is a simple tool to access a PCIe device's MMIO register in Linux user space.
+
+
+DIFFERENT TO "uio_reg"
+I wrote a similar tool named "uio_reg" (https://github.com/Dong-Wang/uio_reg) which only support igb_uio driver.
+"mmio-reg" can support all PCIe device's kernel driver, I list them in Table 1.
+
+Table 1 supported kernel driver
++----------+---------------------------+-----------------+---------+------+
+|          | native driver (e.g.ixgbe) | uio_pci_generic | igb_uio | vfio |
++----------+---------------------------+-----------------+---------+------+
+| uio_reg  |            NO             |        NO       |   YES   |  no  |
++----------+---------------------------+-----------------+---------+------+
+| mmio-reg |            YES            |        YES      |   YES   |  YES |
++----------+---------------------------+-----------------+---------+------+
+
+
+
